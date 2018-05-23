@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Captain index{% endblock %}
+
+{% block body %}
+    <h1>Captain index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Dob</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for captain in captains %}
+            <tr>
+                <td>{{ captain.id }}</td>
+                <td>{{ captain.name }}</td>
+                <td>{{ captain.dob ? captain.dob|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('captain_show', {'id': captain.id}) }}">show</a>
+                    <a href="{{ path('captain_edit', {'id': captain.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('captain_new') }}">Create new</a>
+{% endblock %}

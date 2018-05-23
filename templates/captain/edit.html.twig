@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Captain{% endblock %}
+
+{% block body %}
+    <h1>Edit Captain</h1>
+
+    {{ include('captain/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('captain_index') }}">back to list</a>
+
+    {{ include('captain/_delete_form.html.twig') }}
+{% endblock %}
