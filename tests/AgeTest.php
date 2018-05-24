@@ -35,8 +35,8 @@ class AgeTest extends TestCase
     public function ageProvider()
     {
         return [
-            'adding zeros'  => [0, new \DateTime()],
-            'zero plus one' => [10, new \DateTime('2008-04-30')],
+            'Age 0'  => [0, new \DateTime()],
+            'Age 10' => [10, new \DateTime('2008-04-30')],
         ];
     }
 }
